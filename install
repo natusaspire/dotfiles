@@ -1,0 +1,9 @@
+#!/bin/bash
+
+readonly FILES_PATH="$HOME/.dotfiles"
+
+readonly FILES='.zshrc .tmux.conf .vimrc'
+
+for file in $FILES; do
+  ln -fs "$FILES_PATH/$file" "$HOME/$file" && echo "$file installed"
+done
